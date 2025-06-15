@@ -1,25 +1,49 @@
+// Клас Connection01, який моделює з'єднання з базою даних
 public class Connection01 {
-    private String host;
-    private int port;
-    private boolean secure;
 
-    // Конструктор класу
-    public Connection01(String host, int port, boolean secure) {
-        this.host = host;
-        this.port = port;
-        this.secure = secure;
+    // Модифікатор private вибрано для безпеки та інкапсуляції
+    private String url;
+
+    // Модифікатор private дозволяє контролювати доступ через методи
+    private String username;
+
+    // Модифікатор private захищає чутливі дані, наприклад пароль
+    private String password;
+
+    // Конструктор класу: дозволяє створити об'єкт із початковими значеннями
+    public Connection01(String url, String username, String password) {
+        this.url = url;
+        this.username = username;
+        this.password = password;
     }
 
-    // Методи доступу
-    public String getHost() {
-        return host;
+    // Геттер — метод для отримання значення змінної url
+    public String getUrl() {
+        return url;
     }
 
-    public int getPort() {
-        return port;
+    // Сеттер — метод для зміни значення змінної url
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public boolean isSecure() {
-        return secure;
+    // Геттер для username
+    public String getUsername() {
+        return username;
+    }
+
+    // Сеттер для username
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    // Геттер для password
+    public String getPassword() {
+        return password;
+    }
+
+    // Сеттер для password
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
